@@ -1,0 +1,54 @@
+/* Trong media query lên dùng đơn vị em thay cho px để tránh lỗi trên các trình duyệt khác nhau */
+/* mobile */
+@media (max-width:46.1875em) {
+    .s-col-full,.btn{
+        width:100% ;
+    }
+    .btn {
+        display: inline-block;
+    }
+
+    #header {
+        overflow: hidden;
+    }
+    #header .search-btn {
+        display: none;
+    
+    }
+
+    #header .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    #nav {
+        display: block;
+    }
+    #nav .subnav  {
+        position: initial;
+        background-color: #333;
+        color: #fff;
+    }
+    #nav .subnav li {
+        padding: 5px 35px;
+    }
+    #nav>li {
+        display:block;
+    }
+    #nav>li:first-child {
+        display: inline-block;
+    }
+   
+    #content .member-img {
+        width: 60%;
+    }
+    .contact-form {
+        margin-top: 16px;
+    }
+    .social a i {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+    }
+}
