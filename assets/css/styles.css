@@ -180,17 +180,20 @@ html {
 #header .mobile-menu-btn:hover i {
     color: #000;
 }
-#slider{
-    min-height: 500px;
-    margin-top:46px;
-    padding-top: 50%;
+#slide{
+    margin-top: 46px;
+  
+}
+.slide-item {   
     position: relative;
-    /* Đường dẫn tương đối */
-    background: url('../img/chicago.jpg') top center /cover no-repeat;
-    
+    animation: slideFade 1.5s;
+}
+.slide-item img { 
+    width: 100%;
+    vertical-align: middle;
 }
 
-#slider .text-content {
+.slide-item .text-content {
     position: absolute;
     bottom: 47px;
     color: #fff;
@@ -202,15 +205,19 @@ html {
     width: 100%;
     text-align: center;
 }
-#slider .text-heading {
+#slide .text-heading {
     font-size: 24px;
 }
 
-#slider .text-description {
+#slide .text-description {
     margin-top: 25px;
     font-size: 15px;
     text-shadow: 0 0 1px #000;
 }
+@keyframes slideFade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
 /* content */
 
 #content .content-section{
@@ -411,7 +418,7 @@ html {
      left: 0;
      right: 0;
      background-color: rgba(0,0,0,0.4);
-     display: flex;
+     display: none;
      align-items: center;
      justify-content: center;
  }
@@ -419,9 +426,76 @@ html {
  .modal-container {
      background-color: #fff;
      width: 900px;
+     max-width: calc(100% - 32px);
      min-height: 200px;
+     position: relative;
+     animation: modalFadeIn ease 0.5s;
  }
- .icon-bag {
-     height: 30px;
-     width: 34px;
+ .modal-close {
+     position: absolute;
+     right: 0;
+     padding: 16px;
+     color: #fff;
  }
+ .modal.open {
+     display: flex;
+ }
+ .modal-close:hover,.tickets-pay:hover {
+    color: #000;
+    background-color: #ccc;
+ }
+ .modal-header {
+    
+    font-size: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 42px 16px;
+    letter-spacing: 5px;
+ }
+ .modal-header,.tickets-pay {
+    color: #fff;
+    background-color: #009688;
+ }
+ .modal-body {
+     padding: 16px;
+ }
+ .modal-header>i {
+    margin-right: 16px;
+ }
+ .modal-label {
+    display: block;
+ }
+
+ .modal-input {
+    margin: 12px 0 24px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    
+}
+.tickets-pay {
+    padding: 16px;
+    width: 100%;
+    border: none;
+}
+
+.modal-footer {
+    text-align: right;padding: 16px;
+}
+
+.modal-footer a {
+    color: #2196F3;
+}
+
+@keyframes modalFadeIn {
+    from {
+        transform: translateY(-150px);
+        opacity: 0.5 ;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        
+    }
+}

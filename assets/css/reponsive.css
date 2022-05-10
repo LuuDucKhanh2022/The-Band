@@ -39,7 +39,9 @@
     #nav>li:first-child {
         display: inline-block;
     }
-   
+    .text-content {
+        display: none;
+    }
     #content .member-img {
         width: 60%;
     }
