@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The band</title>
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <link rel="stylesheet" href="/assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/fonts/themify-icons/themify-icons.css">
-    <link rel="shortcut icon" href="/assets/img/The band.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/The band.jpg" type="image/x-icon">
 </head>
 
 <body>
@@ -43,11 +43,29 @@
             </div>
         </div>
 
-        <div id="slider">
-            <div class="text-content">
-                <div class="text-heading">New York</div>
-                <p class="text-description">The atmosphere in New York is lorem ipsum.</p>
+        <div id="slide">
+            <div class="slide-item">
+                <img src="./assets/img/la.jpg" alt="" class="sider-img">
+                <div class="text-content">
+                    <div class="text-heading">Los Angeles</div>
+                    <p class="text-description">We had the best time playing at Venice Beach!</p>
+                </div>
             </div>
+            <div class="slide-item">
+                <img src="./assets/img/ny.jpg" alt="" class="sider-img">
+                <div class="text-content">
+                    <div class="text-heading">New York</div>
+                    <p class="text-description">The atmosphere in New York is lorem ipsum.</p>
+                </div>
+            </div>
+            <div class="slide-item">
+                <img src="./assets/img/chicago.jpg" alt="" class="sider-img">
+                <div class="text-content">
+                    <div class="text-heading">Chicago</div>
+                    <p class="text-description">Thank you, Chicago - A night we won't forget.</p>
+                </div>
+            </div>
+            
         </div>
 
         <div id="content">
@@ -91,7 +109,7 @@
                                 <p class="place-heading"><b>New York</b></p>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="btn">Buy Tickets</a>
+                                <button href="" class="btn js-buy-tickets">Buy Tickets</button>
                             </div>
                         </li>
 
@@ -101,7 +119,7 @@
                                 <p class="place-heading"><b>Paris</b></p>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href=""  class="btn">Buy Tickets</a>
+                                <button href=""  class="btn js-buy-tickets ">Buy Tickets</button>
                             </div>
                         </li>
 
@@ -111,7 +129,7 @@
                                 <p class="place-heading"><b>San Fransico</b></p>
                                 <p class="place-time">Fri 27 Nov 2016</p>
                                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                                <a href="" class="btn">Buy Tickets</a>
+                                <button href="" class="btn js-buy-tickets">Buy Tickets</button>
                             </div>
                         </li>
                     </div>
@@ -171,7 +189,7 @@
         </div>
     </div>
 
-<!--     <div class="modal">
+    <div class="modal">
         <div class="modal-container">
             <div class="modal-close">
                 <i class="ti-close"></i>
@@ -181,63 +199,31 @@
                 Tickets
             </header>
             <div class="modal-body">
-                <label for="" class="modal-label">
+                <label for="quantity" class="modal-label">
                     <i class="ti-shopping-cart"></i>
                     Tickets, $15 per person
                 </label>
-                <input type="text" class="modal-input" placeholder="How many?">
+                <input type="text" id="quantity" class="modal-input" placeholder="How many?">
 
-                <label for="" class="modal-label">
+                <label for="email-address" class="modal-label">
                     <i class="ti-user"></i>
                     Send to
                 </label>
-                <input type="email" class="modal-input" placeholder="Inter emmail">
+                <input type="email" id="email-address" class="modal-input" placeholder="Enter email">
 
-                <button class="tickets-pay">Pay
+                <button class="tickets-pay">PAY
                     <i class="ti-check"></i>
-                </button>
-                <footer class="modal-footer">
-                    <p class="modal-help">Need <a href="">help?</a></p> 
-                </footer>
-                
+                </button>                
             </div>
+
+            <footer class="modal-footer">
+                <p class="modal-help">Need <a href="">help?</a></p> 
+            </footer>
         </div>
     </div>
- -->
-    <script>
-        var header = document.getElementById('header');
-        var mobileMenu = document.getElementById('mobile-menu');
-        var headerHeight = header.clientHeight;
-        // Tự động đóng/mở menu mobile
-        mobileMenu.onclick = function() {
-            var isClose = header.clientHeight === headerHeight;
-            if (isClose) {
-                header.style.height = 'auto';
-            } else {
-                header.style.height = null;
-            }
-        }
 
-        // tự động đóng khi chọn menu item
-        var menuItems= document.querySelectorAll('#nav li a[href*="#"]');
-        console.log(menuItems);
-
-        for (var i = 0;i<menuItems.length;i++)
-        {
-            var menuItem = menuItems[i];
-            menuItem.onclick = function(event){
-                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
-                if (isParentMenu)
-                {
-                    event.preventDeFault();
-                }
-                else
-                {
-                    header.style.height = null;
-                }
-                
-            }
-        }
+    <script src="./app.js">
+       
         
     </script>
 </body>
